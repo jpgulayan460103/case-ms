@@ -28,7 +28,13 @@ class HomeController extends Controller
     {
         $data['case_categories'] = CaseCategory::all();
         $data['beneficiaries'] = Beneficiary::all();
-        $data['beneficiary_cases'] = BeneficiaryCase::all();
+        $beneficiary_cases = BeneficiaryCase::all();
+        foreach ($beneficiary_cases as $beneficiary_case) {
+            $beneficiary_case->beneficiary;
+            $beneficiary_case->case_category;
+        }
+        // return $beneficiary_cases;
+        $data['beneficiary_cases'] = $beneficiary_cases;
         return view('home',$data);
     }
 }

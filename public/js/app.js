@@ -3408,6 +3408,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {},
   props: ['beneficiaryCases'],
@@ -96861,11 +96872,57 @@ var render = function() {
         },
         [
           _c("el-table-column", {
-            attrs: { prop: "beneficiary_id", label: "Case Category" }
+            attrs: { label: "HHID" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(_vm._s(scope.row.beneficiary.household_id))
+                    ])
+                  ]
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
-            attrs: { prop: "case_category_id", label: "Case Category" }
+            attrs: { label: "Name of Grantee" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(
+                          scope.row.beneficiary.firstname +
+                            " " +
+                            scope.row.beneficiary.middlename +
+                            " " +
+                            scope.row.beneficiary.lastname
+                        )
+                      )
+                    ])
+                  ]
+                }
+              }
+            ])
+          }),
+          _vm._v(" "),
+          _c("el-table-column", {
+            attrs: { label: "Case Category" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function(scope) {
+                  return [
+                    _c("span", [_vm._v(_vm._s(scope.row.case_category.name))])
+                  ]
+                }
+              }
+            ])
           }),
           _vm._v(" "),
           _c("el-table-column", {
@@ -110281,8 +110338,8 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\casems-vue\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\casems-vue\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\case-ms\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\case-ms\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
